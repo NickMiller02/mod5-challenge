@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Work Day Scheduler</title>
   </head>
 
@@ -29,12 +29,13 @@
       <p id="currentDay" class="lead"></p>
     </header>
     <div class="container">
-      <!-- Timeblocks go here -->
+      <!-- Time blocks for each hour -->
       <div id="hour8" class="time-block row">
         <div class="hour col-md-1">8 AM</div>
         <textarea class="description col-md-10"></textarea>
         <button class="saveBtn col-md-1"><i class="fas fa-save"></i></button>
       </div>
+      <!-- Setting each hours id and setting up to be able to be called on -->
       <div id="hour9" class="time-block row">
         <div class="hour col-md-1">9 AM</div>
         <textarea class="description col-md-10"></textarea>
@@ -84,6 +85,6 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="./script.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
