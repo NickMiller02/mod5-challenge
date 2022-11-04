@@ -14,29 +14,30 @@ $(document).ready(function() {
     // Function to handle Time for the schedule
     function scheduleTimer() {
         
-        $(".hour").each(function () {
-            var timeDiv = parseInt($('.hour').attr("id").split("hour")[1]);
-            
+        //Looping over each hour block
+        $(".time-block").each(function () {
+            var hour = parseInt($(this).attr("id").split("hour")[1]);
+
             //Background color if statement for each scenerio
-            if (timeDiv == currentTime) {
-              $(this).addClass("present");
-              $(this).removeClass("past");
-            
-            } else if (timeDiv > currentTime) {
-              $(this).removeClass("present");
-              $(this).addClass("future");
-    
-            } else if (timeDiv < currentTime) {
-              $(this).removeClass("future");
-              $(this).addClass("past");
-            }
-    
-          });
+            if (hour == currentTime) {
+            $(this).addClass("present");
+            $(this).removeClass("past");
+                
+            } else if (hour > currentTime) {
+            $(this).removeClass("present");
+            $(this).addClass("future");
         
+            } else if (hour < currentTime) {
+            $(this).removeClass("future");
+            $(this).addClass("past");
+            }
+        });
             
     }
-        
-    // Save button Function
+
+    scheduleTimer();
+
+// Save button Function
 $('saveBtn').on("click", function() {
     var desc = $(this).siblings(".description").val();
     var time = $(this).parent().attr("id");
